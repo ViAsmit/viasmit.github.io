@@ -2449,3 +2449,11 @@ body {
   border-radius: 50%;
   height: 200px;
 }
+
+.bot{
+  margin-top: 5vh !important;
+}
+
+.title:hover{
+  color:  #FF4C60;
+}
