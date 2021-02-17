@@ -2439,3 +2439,13 @@ body {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.thumb img.resize{
+  height: 400px !important;
+  width: 280px !important;
+}
+
+.avatar{
+  border-radius: 50%;
+  height: 200px;
+}
