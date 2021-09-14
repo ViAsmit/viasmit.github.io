@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: viasmit.github.io
+Token: 4520d872fa1c2d83928bf9678304395f6bd036a2a99eea67f8940fa68bf7ddc0
