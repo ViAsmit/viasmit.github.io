@@ -1,0 +1,154 @@
+\documentclass[]{resume-openfont}
+
+\pagestyle{fancy}
+\resetHeaderAndFooter
+
+%--------------------------------------------------------------
+% Convenience command - make it easy to fill template
+
+% Create job position command. Parameters: company, position, location, when
+\newcommand{\resumeHeading}[4]{\runsubsection{\uppercase{#1}}\descript{ | #2}\hfill\location{#3 | #4}\fakeNewLine}
+
+% Create education heading. Parameters: Name, degree, location, when
+\newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}  \location{#3 | #4}\\
+\descript{#2}\fakeNewLine}
+
+% Create project heading. Parameters: Name, link, Tech stack
+\newcommand{\projectHeading}[3]{\Project{#1}{#2}
+\descript{#3}\\}
+
+\newcommand{\projectHeadingWithDate}[4]{\Project{#1}{#2}
+\descript{#3 | #4}\\}
+
+% Parameters: courses
+\newcommand{\courseWork}[1]{\textbf{Coursework:} #1}
+
+% Parameters: courses
+\newcommand{\teacherAssistant}[1]{\textbf{Teacher Assistant (TA):} #1}
+
+%--------------------------------------------------------------
+\begin{document}
+
+%--------------------------------------------------------------
+%     Profile
+%--------------------------------------------------------------
+\newcommand{\yourName}{Asmit Vimal}
+\newcommand{\yourWebsite}{https://viasmit.github.io}
+\newcommand{\yourWebsiteLink}{https://viasmit.github.io}
+\newcommand{\yourEmail}{asmit.vml.962@gmail.com}
+\newcommand{\yourPhone}{+91-8574758395}
+\newcommand{\githubUserName}{ViAsmit}
+\newcommand{\linkedInUserName}{asmit-vimal}
+
+\begin{center}
+    \Huge \scshape \latoRegular{\yourName} \\ \vspace{5pt}
+    \small \href{mailto:\yourEmail}{\underline{\yourEmail}} \hspace{2pt}  $|$ \hspace{2pt} \yourPhone \hspace{2pt} $|$ \hspace{2pt}
+    \href{https://www.linkedin.com/in/\linkedInUserName}{\underline{LinkedIn}} \hspace{2pt} $|$ \hspace{2pt}
+    \href{https://github.com/\githubUserName}{\underline{GitHub}} \hspace{2pt} $|$ \hspace{2pt} \href{\yourWebsite}{\underline{Portfolio}}
+\end{center}
+
+%--------------------------------------------------------------
+%     Experience  (moved above Education - 3.5 yrs at CRED should lead)
+%--------------------------------------------------------------
+\section{\ralewayBold{Work Experience}}
+
+\resumeHeading{CRED}{Backend Engineer - SDE 2}{Bengaluru, IN}{Jan 2023 -- Present}
+\begin{bullets}
+    % FILL: monthly bookings / GMV / MAU for Flights & Hotels. "0 to 1" alone is a claim, not evidence.
+    \item Built and launched \textbf{CRED Flights \& Hotels} from zero to one, owning search, booking and payments services end-to-end; now serving \textbf{100+} bookings per day with \textbf{1K+} DAU.
+
+    \item Engineered a CRON-scheduled \textbf{Statement of Accounts} pipeline serving \textbf{50K+ users daily} using \textbf{S3, CDC, Databricks and SQS}; now the shared path for \textbf{3 lending products} at \textbf{30\%} lower cost than the system it replaced.
+
+    % FILL: absolute latency (Xms -> Yms) and templates rendered/day. 38% is stronger with a baseline.
+    \item Replaced Apache Velocity with an \textbf{in-house template resolver}, cutting median resolution time \textbf{38\%} across \textbf{100+} templates rendered daily.
+
+    % FILL: how many suppliers, how many LOBs, integration time before vs after.
+    \item Architected a \textbf{multi-supplier platform} supporting rule-based supplier fan-out with response transformation, aggregation and de-duplication; onboarded \textbf{7} suppliers and cut new-supplier integration from \textbf{1-2 weeks to 1-2 days}, now adopted by \textbf{3} LOBs.
+
+    % FILL: what the rule engine removed - deploys avoided, eng-days saved per quarter.
+    \item Designed an \textbf{entity-based rule engine} that moved business-rule changes from code deploys to runtime configuration, used across \textbf{multiple LOBs}.
+
+    % FILL: name ONE agent and its measured saving. "Multiple" with no number reads as filler.
+    \item Shipped \textbf{5+ AI agents and automation workflows, with skills} for various purposes like on-call triaging and debugging, log search skills, tech-doc-writer, our own in-house AI employee etc, reducing manual effort by \textbf{20+ hours/week} for the bankstack team.
+
+    % ADD IF TRUE - this is the strongest missing signal for SDE3. Mentorship, on-call ownership,
+    % design reviews, interviewing. Delete if not applicable.
+    \item Mentored \textbf{5} engineers, led design reviews for flights, hotels, co-lending and LAS, owned on-call for \textbf{10+} production services.
+
+    % ADD IF TRUE: scale numbers. RPS, p99 latency, data volume. Backend resumes live on these.
+\end{bullets}
+\sectionsep
+
+\vspace{5pt}
+
+\resumeHeading{Lal10}{Software Development Engineer Intern}{Noida, IN}{May 2022 -- Dec 2022}
+\begin{bullets}
+    \item Re-architected the database schema from a legacy SQL system to \textbf{MongoDB} and refactored core endpoints, reducing p95 response time from \textbf{3000ms to 750ms}.
+    \item Managed cloud infrastructure on \textbf{AWS}, including EC2, RDS, DynamoDB, SQS, etc.
+\end{bullets}
+
+\vspace{10pt}
+\hline{}
+\vspace{5pt}
+
+%--------------------------------------------------------------
+%     Skills
+%--------------------------------------------------------------
+\section{\ralewayBold{Skills}}
+\begin{skillList}
+    \singleItem{LANGUAGES:}{Java, Go, Python, TypeScript/JavaScript, C/C++, SQL, Bash, Dart}
+    \\
+    \singleItem{FRAMEWORKS:}{Spring Boot, Dropwizard, Node.js, ReactJS, Flutter, Django, Flask}
+    \\
+    \singleItem{DATA:}{PostgreSQL, MySQL, DynamoDB, Redis, Elasticsearch/OpenSearch, Databricks}
+    % ADD if you touch them: Kafka, Kubernetes, Terraform, Prometheus/Grafana, Datadog.
+    % A backend SDE2 resume listing only SQS for messaging and no observability stack looks thin.
+    \\
+    \singleItem{INFRASTRUCTURE:}{AWS (S3, SQS, EC2, Lambda), GCP, Azure, Docker, Git, CI/CD}
+    \\
+    \singleItem{AI TOOLING:}{Claude, Codex, Gemini}
+    % Removed: "OTHER: DSA, OOPS, DBMS, OS, Computer Network, ML, AI" - fresher signal at 3.5 YOE.
+    % Removed: Android Studio, VS Code - IDEs are not skills.
+\end{skillList}
+
+\vspace{10pt}
+\hline{}
+\vspace{10pt}
+
+%--------------------------------------------------------------
+%     Education
+%--------------------------------------------------------------
+\section{\ralewayBold{Education}}
+% Swapped args so NIT Patna is the headline and the degree is the subtitle.
+\educationHeading{National Institute of Technology, Patna}{BTech (Hons.), Computer Science and Engineering}{Bihar, IN}{Jun 2019 -- Jun 2023}\ralewayBold{CGPA: 9.14 / 10}
+
+\vspace{20pt}
+\hline{}
+\sectionsep
+
+%--------------------------------------------------------------
+%     Projects
+%--------------------------------------------------------------
+\section{\ralewayBold{Projects}}
+\projectHeading{Delrit - Ride Sharing App}{https://github.com/ViAsmit/Ride-Share}{Flutter, Dart, Firebase, Google Maps SDK, Node.js}
+\begin{bullets}
+    \item Cross-platform ride-sharing and carpooling app with live location tracking, push notifications and integrated payments.
+\end{bullets}
+\sectionsep
+
+\vspace{5pt}
+\hline{}
+\vspace{5pt}
+
+%--------------------------------------------------------------
+%     Achievements
+%--------------------------------------------------------------
+\section{\ralewayBold{Achievements}}
+\begin{bullets}
+    \item \href{https://www.codechef.com/users/vi_asmit}{\textbf{\underline{CodeChef}}} 4-star, rating \textbf{1825} \hspace{10pt} $|$ \hspace{10pt} \href{https://codeforces.com/profile/vi_asmit}{\textbf{\underline{Codeforces}}} Specialist, rating \textbf{1417}
+    % Removed: "GitHub 2000+ commits" (commit count is not an achievement) and
+    % "HackerRank 8 badges / 9 verified skills" (fresher signal). Add real ones if you have them:
+    % patents, internal awards, conference talks, open-source contributions with adoption.
+\end{bullets}
+
+\end{document}
